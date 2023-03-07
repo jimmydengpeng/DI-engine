@@ -207,3 +207,7 @@ class DingEnvWrapper(BaseEnv):
         except Exception:
             raw_env = self._raw_env
         return DingEnvWrapper(raw_env, self._cfg, self._seed_api, caller)
+
+    def render(self, mode="human"):
+        if self._env is not None:
+            self._env.render()
